@@ -13,7 +13,8 @@ class ConexaoDB
     {
 
         try{
-            $config = require_once "config.php";
+            //$config = require_once "config.php";
+            $config = require_once __DIR__ . "/config.php";
             if(!isset($config['db'])){
                 throw new \InvalidArgumentException(" Configuracao nao existe");
             }

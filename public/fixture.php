@@ -8,7 +8,11 @@ spl_autoload_register();
 $conn = new NEI\CONEXAO\ConexaoDB();
 
 
-$tabProd = $conn->conexaoDB()->prepare(
+
+$limpTable = $conn->conexaoDB()->exec("DROP TABLE IF EXISTS produto;");
+
+
+$tabProd = $conn->conexaoDB()->exec(
     "CREATE TABLE IF NOT EXISTS `produto` (
     `id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `nome` VARCHAR(255) NOT NULL,
@@ -18,11 +22,7 @@ $tabProd = $conn->conexaoDB()->prepare(
 );
 
 
-if (!$tabProd->execute()) {
-    die(print_r($tabProd->errorInfo()));
-}
-
-
+/*
 $nome = array(
     0=>'Carro',
     1=>'Moto',
@@ -59,7 +59,7 @@ for($i=0; $i<=4; $i++){
 
 
 
-     $stmt = $conn->conexaoDB()->prepare("INSERT INTO produto(nome,valor,descricao,categoria) VALUES(:nome,:valor,:descricao,:categoria)");
+     $stmt = $conn->conexaoDB()->prepare("INSERT INTO produto(nome,valor,descricao,categoria) VALUES(:nome,:valor,:descricao,:categoria);");
 
     $stmt->bindParam(":nome", $nome[$i]);
     $stmt->bindParam(":valor", $valor[$i]);
@@ -70,6 +70,6 @@ for($i=0; $i<=4; $i++){
     echo "Tabela Criada!<br>Dados Cadastrados!";
 }
 
-
+*/
 
 
