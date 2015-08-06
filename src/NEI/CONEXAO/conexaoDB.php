@@ -14,7 +14,7 @@ class ConexaoDB
 
         try{
             //$config = require_once "config.php";
-            $config = require_once __DIR__ . "/config.php";
+            $config = parse_ini_file(__DIR__ . "/config.ini", true);
             if(!isset($config['db'])){
                 throw new \InvalidArgumentException(" Configuracao nao existe");
             }
