@@ -22,7 +22,7 @@ $tabProd = $conn->conexaoDB()->exec(
 );
 
 
-/*
+
 $nome = array(
     0=>'Carro',
     1=>'Moto',
@@ -70,6 +70,5 @@ for($i=0; $i<=4; $i++){
     echo "Tabela Criada!<br>Dados Cadastrados!";
 }
 
-*/
 
 
