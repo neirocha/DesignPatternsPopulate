@@ -25,7 +25,9 @@ class ConexaoDB
             $password = (isset($config['db']['password'])) ? $config['db']['password'] : null;
 
             //return new \PDO("mysql:host={$host};dbname={$dbname}", $user, $password);
-            return new \PDO('sqlite:database.db');
+            $db = new \PDO('sqlite:database.db');
+            $db->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+            return $db;
 
         }catch(\PDOException $e){
 
