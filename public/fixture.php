@@ -14,7 +14,7 @@ $limpTable = $conn->conexaoDB()->exec("DROP TABLE IF EXISTS produto;");
 
 $tabProd = $conn->conexaoDB()->exec(
     "CREATE TABLE IF NOT EXISTS `produto` (
-    `id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `id` INT(11) PRIMARY KEY,
     `nome` VARCHAR(255) NOT NULL,
     `valor` VARCHAR(14) NOT NULL,
     `descricao` TEXT NOT NULL,
@@ -22,7 +22,7 @@ $tabProd = $conn->conexaoDB()->exec(
 );
 
 
-/*
+
 $nome = array(
     0=>'Carro',
     1=>'Moto',
@@ -70,6 +70,5 @@ for($i=0; $i<=4; $i++){
     echo "Tabela Criada!<br>Dados Cadastrados!";
 }
 
-*/
 
 

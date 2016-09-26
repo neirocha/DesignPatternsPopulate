@@ -3,8 +3,6 @@ define('CLASS_DIR', __DIR__ . "/../src/");
 set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
 spl_autoload_register();
 
-use \NEI;
-
 $form = new NEI\Formulario();
 $select = $form->creatField('Select', array('name'=>'produto'));
 $fieldset = $form->creatField("Fieldset", array('legend'=>"Design Patterns _*_ Populando Formulário"));
